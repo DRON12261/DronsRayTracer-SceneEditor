@@ -1,0 +1,1102 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI.gd" type="Script" id=1]
+[ext_resource path="res://SpherePrefab.tscn" type="PackedScene" id=3]
+[ext_resource path="res://LightPrefab.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CubePrefab.tscn" type="PackedScene" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [  ]
+}
+light_prefab = ExtResource( 4 )
+sphere_prefab = ExtResource( 3 )
+cube_prefab = ExtResource( 5 )
+
+[node name="LeftPanel" type="Panel" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -300.0
+margin_right = 250.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 250, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elements" type="VBoxContainer" parent="LeftPanel"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 245.0
+margin_bottom = 595.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SceneManager" type="HBoxContainer" parent="LeftPanel/Elements"]
+margin_right = 240.0
+margin_bottom = 30.0
+custom_constants/separation = 4
+
+[node name="CreateSceneB" type="Button" parent="LeftPanel/Elements/SceneManager"]
+margin_right = 118.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 118, 30 )
+text = "Create Scene"
+
+[node name="LoadSceneB" type="Button" parent="LeftPanel/Elements/SceneManager"]
+margin_left = 122.0
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 118, 30 )
+text = "Load Scene"
+
+[node name="SaveSceneB" type="Button" parent="LeftPanel/Elements"]
+margin_top = 34.0
+margin_right = 240.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 118, 30 )
+text = "Save Scene"
+
+[node name="HSeparator" type="HSeparator" parent="LeftPanel/Elements"]
+margin_top = 68.0
+margin_right = 240.0
+margin_bottom = 72.0
+
+[node name="TreeLabel" type="Label" parent="LeftPanel/Elements"]
+margin_top = 76.0
+margin_right = 240.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 240, 20 )
+text = "Objects List:"
+valign = 1
+
+[node name="Tree" type="Tree" parent="LeftPanel/Elements"]
+margin_top = 100.0
+margin_right = 240.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 240, 200 )
+hide_root = true
+drop_mode_flags = 1
+
+[node name="HSeparator4" type="HSeparator" parent="LeftPanel/Elements"]
+margin_top = 304.0
+margin_right = 240.0
+margin_bottom = 308.0
+
+[node name="CreateSphereB" type="Button" parent="LeftPanel/Elements"]
+margin_top = 312.0
+margin_right = 240.0
+margin_bottom = 342.0
+rect_min_size = Vector2( 118, 30 )
+text = "Create Sphere"
+
+[node name="CreateCubeB" type="Button" parent="LeftPanel/Elements"]
+margin_top = 346.0
+margin_right = 240.0
+margin_bottom = 376.0
+rect_min_size = Vector2( 118, 30 )
+text = "Create Box"
+
+[node name="CreateLightSourceB" type="Button" parent="LeftPanel/Elements"]
+margin_top = 380.0
+margin_right = 240.0
+margin_bottom = 410.0
+rect_min_size = Vector2( 118, 30 )
+text = "Create Light Source"
+
+[node name="CreatePlaneB" type="Button" parent="LeftPanel/Elements"]
+margin_top = 414.0
+margin_right = 240.0
+margin_bottom = 444.0
+rect_min_size = Vector2( 118, 30 )
+text = "Create Plane"
+
+[node name="HSeparator2" type="HSeparator" parent="LeftPanel/Elements"]
+margin_top = 448.0
+margin_right = 240.0
+margin_bottom = 452.0
+
+[node name="ChangeClearColorB" type="Button" parent="LeftPanel/Elements"]
+margin_top = 456.0
+margin_right = 240.0
+margin_bottom = 486.0
+rect_min_size = Vector2( 118, 30 )
+text = "Change Clear Color"
+
+[node name="HSeparator3" type="HSeparator" parent="LeftPanel/Elements"]
+margin_top = 490.0
+margin_right = 240.0
+margin_bottom = 494.0
+
+[node name="RenderB" type="Button" parent="LeftPanel/Elements"]
+margin_top = 498.0
+margin_right = 240.0
+margin_bottom = 588.0
+rect_min_size = Vector2( 118, 90 )
+text = "RENDER"
+
+[node name="RightPanel" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 250, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenusContainer" type="VBoxContainer" parent="RightPanel"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 240, 590 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PropertiesLabel" type="Label" parent="RightPanel/MenusContainer"]
+margin_right = 240.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 240, 20 )
+text = "Object Properties:"
+valign = 1
+
+[node name="Properties" type="Control" parent="RightPanel/MenusContainer"]
+margin_top = 24.0
+margin_right = 240.0
+margin_bottom = 24.0
+
+[node name="Sphere" type="Control" parent="RightPanel/MenusContainer/Properties"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elements" type="VBoxContainer" parent="RightPanel/MenusContainer/Properties/Sphere"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_right = 240.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 240, 20 )
+text = "Sphere Name"
+valign = 1
+
+[node name="NameEdit" type="LineEdit" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 24.0
+margin_right = 240.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 240, 30 )
+align = 1
+
+[node name="RadiusLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 58.0
+margin_right = 240.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 240, 20 )
+text = "Radius"
+valign = 1
+
+[node name="RadiusEdit" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 82.0
+margin_right = 240.0
+margin_bottom = 106.0
+min_value = 0.1
+max_value = 1e+06
+step = 0.001
+value = 0.1
+align = 1
+
+[node name="CoordinatesLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 110.0
+margin_right = 240.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 240, 20 )
+text = "Coordinates"
+valign = 1
+
+[node name="CoordinatesEdit" type="HBoxContainer" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 134.0
+margin_right = 240.0
+margin_bottom = 164.0
+custom_constants/separation = 0
+
+[node name="X" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Sphere/Elements/CoordinatesEdit"]
+margin_right = 80.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="Y" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Sphere/Elements/CoordinatesEdit"]
+margin_left = 80.0
+margin_right = 160.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="Z" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Sphere/Elements/CoordinatesEdit"]
+margin_left = 160.0
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="ColorLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 168.0
+margin_right = 240.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 240, 20 )
+text = "Color"
+valign = 1
+
+[node name="ColorEdit" type="ColorRect" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 192.0
+margin_right = 240.0
+margin_bottom = 222.0
+rect_min_size = Vector2( 240, 30 )
+
+[node name="TextureButton4" type="TextureButton" parent="RightPanel/MenusContainer/Properties/Sphere/Elements/ColorEdit"]
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 240, 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IsReflectiveCh" type="HBoxContainer" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 226.0
+margin_right = 240.0
+margin_bottom = 256.0
+
+[node name="Label" type="Label" parent="RightPanel/MenusContainer/Properties/Sphere/Elements/IsReflectiveCh"]
+margin_right = 200.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 200, 30 )
+text = "Is Reflective"
+valign = 1
+
+[node name="CheckBox" type="CheckBox" parent="RightPanel/MenusContainer/Properties/Sphere/Elements/IsReflectiveCh"]
+margin_left = 204.0
+margin_right = 234.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+
+[node name="DeleteB" type="Button" parent="RightPanel/MenusContainer/Properties/Sphere/Elements"]
+margin_top = 260.0
+margin_right = 240.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 240, 30 )
+text = "Delete Sphere"
+
+[node name="Cube" type="Control" parent="RightPanel/MenusContainer/Properties"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elements" type="VBoxContainer" parent="RightPanel/MenusContainer/Properties/Cube"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_right = 240.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 240, 20 )
+text = "Box Name"
+valign = 1
+
+[node name="NameEdit" type="LineEdit" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 24.0
+margin_right = 240.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 240, 30 )
+align = 1
+
+[node name="WidthLenghtLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 58.0
+margin_right = 240.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 240, 20 )
+text = "Width Lenght"
+valign = 1
+
+[node name="WidthLenghtEdit" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 82.0
+margin_right = 240.0
+margin_bottom = 106.0
+min_value = 0.1
+max_value = 1e+06
+step = 0.001
+value = 0.1
+align = 1
+
+[node name="HeightLenghtLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 110.0
+margin_right = 240.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 240, 20 )
+text = "Height Lenght"
+valign = 1
+
+[node name="HeightLenghtEdit" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 134.0
+margin_right = 240.0
+margin_bottom = 158.0
+min_value = 0.1
+max_value = 1e+06
+step = 0.001
+value = 0.1
+align = 1
+
+[node name="DepthLenghtLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 162.0
+margin_right = 240.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 240, 20 )
+text = "Depth Lenght"
+valign = 1
+
+[node name="DepthLenghtEdit" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 186.0
+margin_right = 240.0
+margin_bottom = 210.0
+min_value = 0.1
+max_value = 1e+06
+step = 0.001
+value = 0.1
+align = 1
+
+[node name="CoordinatesLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 214.0
+margin_right = 240.0
+margin_bottom = 234.0
+rect_min_size = Vector2( 240, 20 )
+text = "Coordinates"
+valign = 1
+
+[node name="CoordinatesEdit" type="HBoxContainer" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 238.0
+margin_right = 240.0
+margin_bottom = 268.0
+custom_constants/separation = 0
+
+[node name="X" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Cube/Elements/CoordinatesEdit"]
+margin_right = 80.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="Y" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Cube/Elements/CoordinatesEdit"]
+margin_left = 80.0
+margin_right = 160.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="Z" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Cube/Elements/CoordinatesEdit"]
+margin_left = 160.0
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="ColorLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 272.0
+margin_right = 240.0
+margin_bottom = 292.0
+rect_min_size = Vector2( 240, 20 )
+text = "Color"
+valign = 1
+
+[node name="ColorEdit" type="ColorRect" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 296.0
+margin_right = 240.0
+margin_bottom = 326.0
+rect_min_size = Vector2( 240, 30 )
+
+[node name="TextureButton3" type="TextureButton" parent="RightPanel/MenusContainer/Properties/Cube/Elements/ColorEdit"]
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 240, 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IsReflectiveCh" type="HBoxContainer" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 330.0
+margin_right = 240.0
+margin_bottom = 360.0
+
+[node name="Label" type="Label" parent="RightPanel/MenusContainer/Properties/Cube/Elements/IsReflectiveCh"]
+margin_right = 200.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 200, 30 )
+text = "Is Reflective"
+valign = 1
+
+[node name="CheckBox" type="CheckBox" parent="RightPanel/MenusContainer/Properties/Cube/Elements/IsReflectiveCh"]
+margin_left = 204.0
+margin_right = 234.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+
+[node name="DeleteB" type="Button" parent="RightPanel/MenusContainer/Properties/Cube/Elements"]
+margin_top = 364.0
+margin_right = 240.0
+margin_bottom = 394.0
+rect_min_size = Vector2( 240, 30 )
+text = "Delete Cube"
+
+[node name="Light" type="Control" parent="RightPanel/MenusContainer/Properties"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elements" type="VBoxContainer" parent="RightPanel/MenusContainer/Properties/Light"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Light/Elements"]
+margin_right = 240.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 240, 20 )
+text = "Light Name"
+valign = 1
+
+[node name="NameEdit" type="LineEdit" parent="RightPanel/MenusContainer/Properties/Light/Elements"]
+margin_top = 24.0
+margin_right = 240.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 240, 30 )
+align = 1
+
+[node name="CoordinatesLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Light/Elements"]
+margin_top = 58.0
+margin_right = 240.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 240, 20 )
+text = "Coordinates"
+valign = 1
+
+[node name="CoordinatesEdit" type="HBoxContainer" parent="RightPanel/MenusContainer/Properties/Light/Elements"]
+margin_top = 82.0
+margin_right = 240.0
+margin_bottom = 112.0
+custom_constants/separation = 0
+
+[node name="X" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Light/Elements/CoordinatesEdit"]
+margin_right = 80.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="Y" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Light/Elements/CoordinatesEdit"]
+margin_left = 80.0
+margin_right = 160.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="Z" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Light/Elements/CoordinatesEdit"]
+margin_left = 160.0
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="ColorLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Light/Elements"]
+margin_top = 116.0
+margin_right = 240.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 240, 20 )
+text = "Color"
+valign = 1
+
+[node name="ColorEdit" type="ColorRect" parent="RightPanel/MenusContainer/Properties/Light/Elements"]
+margin_top = 140.0
+margin_right = 240.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 240, 30 )
+
+[node name="TextureButton2" type="TextureButton" parent="RightPanel/MenusContainer/Properties/Light/Elements/ColorEdit"]
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 240, 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeleteB" type="Button" parent="RightPanel/MenusContainer/Properties/Light/Elements"]
+margin_top = 174.0
+margin_right = 240.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 240, 30 )
+text = "Delete Light"
+
+[node name="Plane" type="Control" parent="RightPanel/MenusContainer/Properties"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elements" type="VBoxContainer" parent="RightPanel/MenusContainer/Properties/Plane"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_right = 240.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 240, 20 )
+text = "Plane Name"
+valign = 1
+
+[node name="NameEdit" type="LineEdit" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 24.0
+margin_right = 240.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 240, 30 )
+align = 1
+
+[node name="AxisLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 58.0
+margin_right = 240.0
+margin_bottom = 72.0
+text = "Axis"
+
+[node name="AxisList" type="OptionButton" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 76.0
+margin_right = 240.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 240, 30 )
+
+[node name="CoordinatesLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 110.0
+margin_right = 240.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 240, 20 )
+text = "Location on axis"
+valign = 1
+
+[node name="Distance" type="SpinBox" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 134.0
+margin_right = 240.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 80, 30 )
+min_value = -1e+06
+max_value = 1e+06
+step = 0.001
+align = 1
+
+[node name="ColorLabel" type="Label" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 168.0
+margin_right = 240.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 240, 20 )
+text = "Color"
+valign = 1
+
+[node name="ColorEdit" type="ColorRect" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 192.0
+margin_right = 240.0
+margin_bottom = 222.0
+rect_min_size = Vector2( 240, 30 )
+
+[node name="TextureButton" type="TextureButton" parent="RightPanel/MenusContainer/Properties/Plane/Elements/ColorEdit"]
+margin_right = 240.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 240, 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IsReflectiveCh" type="HBoxContainer" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 226.0
+margin_right = 240.0
+margin_bottom = 256.0
+
+[node name="Label" type="Label" parent="RightPanel/MenusContainer/Properties/Plane/Elements/IsReflectiveCh"]
+margin_right = 200.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 200, 30 )
+text = "Is Reflective"
+valign = 1
+
+[node name="CheckBox" type="CheckBox" parent="RightPanel/MenusContainer/Properties/Plane/Elements/IsReflectiveCh"]
+margin_left = 204.0
+margin_right = 234.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+
+[node name="IsChessCh" type="HBoxContainer" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 260.0
+margin_right = 240.0
+margin_bottom = 290.0
+
+[node name="Label" type="Label" parent="RightPanel/MenusContainer/Properties/Plane/Elements/IsChessCh"]
+margin_right = 200.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 200, 30 )
+text = "Is Chees Field"
+valign = 1
+
+[node name="CCheckBox" type="CheckBox" parent="RightPanel/MenusContainer/Properties/Plane/Elements/IsChessCh"]
+margin_left = 204.0
+margin_right = 234.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+
+[node name="DeleteB" type="Button" parent="RightPanel/MenusContainer/Properties/Plane/Elements"]
+margin_top = 294.0
+margin_right = 240.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 240, 30 )
+text = "Delete Model"
+
+[node name="CameraViewport" type="ColorRect" parent="."]
+margin_left = 250.0
+margin_right = 774.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 524, 600 )
+focus_mode = 1
+mouse_filter = 2
+mouse_default_cursor_shape = 13
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shield" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ClearColorPicker" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="Panel" parent="ClearColorPicker"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -275.0
+margin_right = 160.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 320, 490 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPicker" type="ColorPicker" parent="ClearColorPicker"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -259.0
+margin_right = 166.0
+margin_bottom = 211.0
+rect_min_size = Vector2( 310, 470 )
+presets_enabled = false
+presets_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ApplyB" type="Button" parent="ClearColorPicker"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -155.0
+margin_top = 205.0
+margin_right = 155.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 310, 30 )
+text = "Apply"
+
+[node name="CloseB" type="Button" parent="ClearColorPicker"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -155.0
+margin_top = 240.0
+margin_right = 155.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 310, 30 )
+text = "Close"
+
+[node name="RenderWindow" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="BG" type="Panel" parent="RenderWindow"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -135.0
+margin_right = 200.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 400, 270 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Elements" type="VBoxContainer" parent="RenderWindow/BG"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -125.0
+margin_right = 192.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 380, 250 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Size" type="HBoxContainer" parent="RenderWindow/BG/Elements"]
+margin_right = 384.0
+margin_bottom = 48.0
+
+[node name="Width" type="VBoxContainer" parent="RenderWindow/BG/Elements/Size"]
+margin_right = 188.0
+margin_bottom = 48.0
+
+[node name="Label" type="Label" parent="RenderWindow/BG/Elements/Size/Width"]
+margin_right = 188.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 188, 0 )
+text = "Width"
+
+[node name="WSpinBox" type="SpinBox" parent="RenderWindow/BG/Elements/Size/Width"]
+margin_top = 18.0
+margin_right = 188.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 30 )
+min_value = 1.0
+max_value = 1e+06
+value = 1.0
+rounded = true
+
+[node name="Height" type="VBoxContainer" parent="RenderWindow/BG/Elements/Size"]
+margin_left = 192.0
+margin_right = 380.0
+margin_bottom = 48.0
+
+[node name="Label" type="Label" parent="RenderWindow/BG/Elements/Size/Height"]
+margin_right = 188.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 188, 0 )
+text = "Height"
+
+[node name="HSpinBox" type="SpinBox" parent="RenderWindow/BG/Elements/Size/Height"]
+margin_top = 18.0
+margin_right = 188.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 30 )
+min_value = 1.0
+max_value = 1e+06
+value = 1.0
+rounded = true
+
+[node name="AALabel" type="Label" parent="RenderWindow/BG/Elements"]
+margin_top = 52.0
+margin_right = 384.0
+margin_bottom = 66.0
+text = "Anti-Aliasing Level"
+
+[node name="AASpinBox" type="SpinBox" parent="RenderWindow/BG/Elements"]
+margin_top = 70.0
+margin_right = 384.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 30 )
+min_value = 1.0
+value = 1.0
+rounded = true
+
+[node name="PathLabel" type="Label" parent="RenderWindow/BG/Elements"]
+margin_top = 104.0
+margin_right = 384.0
+margin_bottom = 118.0
+text = "Save Path and File Name"
+
+[node name="PathLineEdit" type="LineEdit" parent="RenderWindow/BG/Elements"]
+margin_top = 122.0
+margin_right = 384.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 0, 30 )
+editable = false
+
+[node name="PathButton" type="Button" parent="RenderWindow/BG/Elements"]
+margin_top = 156.0
+margin_right = 384.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 0, 30 )
+text = "Select Path"
+
+[node name="ConfirmB" type="HBoxContainer" parent="RenderWindow/BG/Elements"]
+margin_top = 190.0
+margin_right = 384.0
+margin_bottom = 250.0
+
+[node name="RenderStartB" type="Button" parent="RenderWindow/BG/Elements/ConfirmB"]
+margin_right = 190.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 190, 60 )
+text = "RENDER"
+
+[node name="CancelB" type="Button" parent="RenderWindow/BG/Elements/ConfirmB"]
+margin_left = 194.0
+margin_right = 384.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 190, 60 )
+text = "Cancel"
+
+[node name="Dialogs" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveSceneDialog" type="FileDialog" parent="Dialogs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 400 )
+window_title = "Save Scene"
+access = 2
+filters = PoolStringArray( "*.rtscene ; RayTracing Scene" )
+current_dir = "/Projects/Godot Projects/RayTracingSceneEditor"
+current_path = "/Projects/Godot Projects/RayTracingSceneEditor/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadSceneDialog" type="FileDialog" parent="Dialogs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 400 )
+window_title = "Открыть файл"
+mode = 0
+access = 2
+filters = PoolStringArray( "*.rtscene ; RayTracing Scene" )
+current_dir = "/Projects/Godot Projects/RayTracingSceneEditor"
+current_path = "/Projects/Godot Projects/RayTracingSceneEditor/"
+
+[node name="LoadModelDialog" type="FileDialog" parent="Dialogs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 400 )
+window_title = "Открыть файл"
+mode = 0
+access = 2
+filters = PoolStringArray( "*obj ; OBJ Model File" )
+current_dir = "/Projects/Godot Projects/RayTracingSceneEditor"
+current_path = "/Projects/Godot Projects/RayTracingSceneEditor/"
+
+[node name="SavePictureDialog" type="FileDialog" parent="Dialogs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 400 )
+window_title = "Сохранить файл"
+access = 2
+filters = PoolStringArray( "*.bmp ; BitMap Image" )
+current_dir = "/Projects/Godot Projects/RayTracingSceneEditor"
+current_path = "/Projects/Godot Projects/RayTracingSceneEditor/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateSceneAccept" type="ConfirmationDialog" parent="Dialogs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -29.0
+margin_right = 90.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 160, 56 )
+window_title = "Create new scene?"
+dialog_text = "Unsaved data will be lost!"
+
+[node name="DeleteObjectAccept" type="ConfirmationDialog" parent="Dialogs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -29.0
+margin_right = 80.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 160, 56 )
+window_title = "Delete Object?"
+dialog_text = "Are you sure?"
+[connection signal="pressed" from="LeftPanel/Elements/SceneManager/CreateSceneB" to="." method="_on_CreateSceneB_pressed"]
+[connection signal="pressed" from="LeftPanel/Elements/SceneManager/LoadSceneB" to="." method="_on_LoadSceneB_pressed"]
+[connection signal="pressed" from="LeftPanel/Elements/SaveSceneB" to="." method="_on_SaveSceneB_pressed"]
+[connection signal="item_activated" from="LeftPanel/Elements/Tree" to="." method="_on_Tree_item_activated"]
+[connection signal="item_selected" from="LeftPanel/Elements/Tree" to="." method="_on_Tree_item_selected"]
+[connection signal="pressed" from="LeftPanel/Elements/CreateSphereB" to="." method="_on_CreateSphere_pressed"]
+[connection signal="pressed" from="LeftPanel/Elements/CreateCubeB" to="." method="_on_CreateCube_pressed"]
+[connection signal="pressed" from="LeftPanel/Elements/CreateLightSourceB" to="." method="_on_CreateLightSourceB_pressed"]
+[connection signal="pressed" from="LeftPanel/Elements/CreatePlaneB" to="." method="_on_LoadModelB_pressed"]
+[connection signal="pressed" from="LeftPanel/Elements/ChangeClearColorB" to="." method="_on_ChangeClearColorB_pressed"]
+[connection signal="pressed" from="LeftPanel/Elements/RenderB" to="." method="_on_RenderB_pressed"]
+[connection signal="text_changed" from="RightPanel/MenusContainer/Properties/Sphere/Elements/NameEdit" to="." method="_on_NameEdit_text_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Sphere/Elements/RadiusEdit" to="." method="_on_RadiusEdit_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Sphere/Elements/CoordinatesEdit/X" to="." method="_on_X_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Sphere/Elements/CoordinatesEdit/Y" to="." method="_on_Y_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Sphere/Elements/CoordinatesEdit/Z" to="." method="_on_Z_value_changed"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Sphere/Elements/ColorEdit/TextureButton4" to="." method="_on_TextureButton_pressed"]
+[connection signal="toggled" from="RightPanel/MenusContainer/Properties/Sphere/Elements/IsReflectiveCh/CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Sphere/Elements/DeleteB" to="." method="_on_DeleteB_pressed"]
+[connection signal="text_changed" from="RightPanel/MenusContainer/Properties/Cube/Elements/NameEdit" to="." method="_on_NameEdit_text_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Cube/Elements/WidthLenghtEdit" to="." method="_on_WidthLenghtEdit_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Cube/Elements/HeightLenghtEdit" to="." method="_on_HeightLenghtEdit_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Cube/Elements/DepthLenghtEdit" to="." method="_on_DepthLenghtEdit_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Cube/Elements/CoordinatesEdit/X" to="." method="_on_X_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Cube/Elements/CoordinatesEdit/Y" to="." method="_on_Y_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Cube/Elements/CoordinatesEdit/Z" to="." method="_on_Z_value_changed"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Cube/Elements/ColorEdit/TextureButton3" to="." method="_on_TextureButton_pressed"]
+[connection signal="toggled" from="RightPanel/MenusContainer/Properties/Cube/Elements/IsReflectiveCh/CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Cube/Elements/DeleteB" to="." method="_on_DeleteB_pressed"]
+[connection signal="text_changed" from="RightPanel/MenusContainer/Properties/Light/Elements/NameEdit" to="." method="_on_NameEdit_text_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Light/Elements/CoordinatesEdit/X" to="." method="_on_X_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Light/Elements/CoordinatesEdit/Y" to="." method="_on_Y_value_changed"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Light/Elements/CoordinatesEdit/Z" to="." method="_on_Z_value_changed"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Light/Elements/ColorEdit/TextureButton2" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Light/Elements/DeleteB" to="." method="_on_DeleteB_pressed"]
+[connection signal="text_changed" from="RightPanel/MenusContainer/Properties/Plane/Elements/NameEdit" to="." method="_on_NameEdit_text_changed"]
+[connection signal="item_selected" from="RightPanel/MenusContainer/Properties/Plane/Elements/AxisList" to="." method="_on_AxisList_item_selected"]
+[connection signal="value_changed" from="RightPanel/MenusContainer/Properties/Plane/Elements/Distance" to="." method="_on_X_value_changed"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Plane/Elements/ColorEdit/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="toggled" from="RightPanel/MenusContainer/Properties/Plane/Elements/IsReflectiveCh/CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="toggled" from="RightPanel/MenusContainer/Properties/Plane/Elements/IsChessCh/CCheckBox" to="." method="_on_CCheckBox_toggled"]
+[connection signal="pressed" from="RightPanel/MenusContainer/Properties/Plane/Elements/DeleteB" to="." method="_on_DeleteB_pressed"]
+[connection signal="gui_input" from="CameraViewport" to="." method="_on_CameraViewport_gui_input"]
+[connection signal="pressed" from="ClearColorPicker/ApplyB" to="." method="_on_ApplyB_pressed"]
+[connection signal="pressed" from="ClearColorPicker/CloseB" to="." method="_on_CloseB_pressed"]
+[connection signal="value_changed" from="RenderWindow/BG/Elements/Size/Width/WSpinBox" to="." method="_on_WSpinBox_value_changed"]
+[connection signal="value_changed" from="RenderWindow/BG/Elements/Size/Height/HSpinBox" to="." method="_on_HSpinBox_value_changed"]
+[connection signal="value_changed" from="RenderWindow/BG/Elements/AASpinBox" to="." method="_on_AASpinBox_value_changed"]
+[connection signal="pressed" from="RenderWindow/BG/Elements/PathButton" to="." method="_on_PathButton_pressed"]
+[connection signal="pressed" from="RenderWindow/BG/Elements/ConfirmB/RenderStartB" to="." method="_on_RenderStartB_pressed"]
+[connection signal="pressed" from="RenderWindow/BG/Elements/ConfirmB/CancelB" to="." method="_on_CancelB_pressed"]
+[connection signal="file_selected" from="Dialogs/SaveSceneDialog" to="." method="_on_SaveSceneDialog_file_selected"]
+[connection signal="file_selected" from="Dialogs/LoadSceneDialog" to="." method="_on_LoadSceneDialog_file_selected"]
+[connection signal="file_selected" from="Dialogs/SavePictureDialog" to="." method="_on_SavePictureDialog_file_selected"]
+[connection signal="confirmed" from="Dialogs/CreateSceneAccept" to="." method="_on_CreateSceneAccept_confirmed"]
+[connection signal="confirmed" from="Dialogs/DeleteObjectAccept" to="." method="_on_DeleteObjectAccept_confirmed"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://19757_Up_arrow_v1.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+flags_no_depth_test = true
+albedo_color = Color( 1, 0.494118, 0.494118, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+flags_no_depth_test = true
+albedo_color = Color( 0.494118, 1, 0.494118, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+flags_no_depth_test = true
+albedo_color = Color( 0.494118, 0.494118, 1, 1 )
+
+[node name="MoveArrows" type="Spatial"]
+
+[node name="XArrow" type="CSGMesh" parent="."]
+transform = Transform( -3.25841e-08, 0, 0.2, 0, 0.1, 0, -0.2, 0, -3.25841e-08, 0, 0, 0 )
+layers = 2
+cast_shadow = 0
+mesh = ExtResource( 1 )
+material = SubResource( 1 )
+
+[node name="YArrow" type="CSGMesh" parent="."]
+transform = Transform( 0.141421, -0.0707107, 0, -2.30405e-08, -1.15202e-08, 0.2, -0.141421, -0.0707107, -3.25841e-08, 0, 0, 0 )
+layers = 2
+cast_shadow = 0
+mesh = ExtResource( 1 )
+material = SubResource( 2 )
+
+[node name="ZArrow" type="CSGMesh" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.1, 0, 0, 0, 0.2, 0, 0, 0 )
+layers = 2
+cast_shadow = 0
+mesh = ExtResource( 1 )
+material = SubResource( 3 )

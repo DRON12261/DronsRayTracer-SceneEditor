@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.945098, 0.419608, 0.419608, 1 )
+metallic_specular = 1.0
+
+[node name="Sphere0" type="CSGSphere"]
+radial_segments = 16
+rings = 16
+material = SubResource( 1 )

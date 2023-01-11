@@ -1,6 +1,6 @@
 # Разработка приложения для построения 3D моделей с помощью трассировки лучей
 # [РЕПОЗИТОРИЙ С РЕДАКТОРОМ СЦЕН]
-[Ссылка на второй репозиторий с рендером]()
+[Ссылка на второй репозиторий с рендером](https://github.com/DRON12261/DronsRayTracer-RaytracerCpp)
 
 ## Презентация
 [Ссылка на презентацию в Google Docs](https://docs.google.com/presentation/d/1oqAt1HlBXtrdiDoOsI4phRVdBJvNXpkoxAqHZr2-xjI/edit?usp=sharing)

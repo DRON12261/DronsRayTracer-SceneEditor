@@ -5,6 +5,9 @@
 ## Презентация
 [Ссылка на презентацию в Google Docs](https://docs.google.com/presentation/d/1oqAt1HlBXtrdiDoOsI4phRVdBJvNXpkoxAqHZr2-xjI/edit?usp=sharing)
 
+## Видео с демонстрацией рендера и редактора сцен
+[![демо](https://img.youtube.com/vi/9Di-tmeN2Ko/0.jpg)](https://www.youtube.com/watch?v=9Di-tmeN2Ko)
+
 ## Скриншот редактора сцен
 ![Скрин1](https://i.ibb.co/L16Kzx1/1.png)
 
